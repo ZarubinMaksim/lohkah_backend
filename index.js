@@ -14,11 +14,11 @@ const {
 } = require('./controllers/lessons');
 const { handleCors } = require('./middlewares/cors');
 const { addTestResult, getResults } = require('./controllers/testResults');
-// const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
 const app = express();
 
-// mongoose.connect('mongodb://LekaAdmin:1234567890@89.111.140.120:27017/leka');
-mongoose.connect('mongodb://127.0.0.1:27017/leka');
+mongoose.connect('mongodb://LekaAdmin:1234567890@89.111.140.120:27017/leka');
+// mongoose.connect('mongodb://127.0.0.1:27017/leka');
 
 app.use((req, res, next) => {
   next();
@@ -30,7 +30,7 @@ app.listen(PORT, () => {
 
 app.use(express.json());
 app.use(handleCors);
-// app.use(cookieParser());
+app.use(cookieParser());
 
 app.post('/signup', createUser);
 app.post('/signin', login);
