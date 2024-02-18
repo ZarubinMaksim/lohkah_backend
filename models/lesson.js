@@ -19,7 +19,7 @@ const lessonSchema = new mongoose.Schema({
   lessonName: {
     type: String,
     required: true,
-    minlength: 3,
+    minlength: 2,
   },
   words: [wordSchema] 
  });
