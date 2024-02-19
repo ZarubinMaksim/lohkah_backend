@@ -17,7 +17,6 @@ const { addTestResult, getResults } = require('./controllers/testResults');
 const cookieParser = require('cookie-parser')
 const app = express();
 
-// mongoose.connect('mongodb://38.180.95.120:27017/leka');
 mongoose.connect('mongodb://lekaUser:1234567890@38.180.95.120:27017/leka');
 // mongoose.connect('mongodb://127.0.0.1:27017/leka');
 
